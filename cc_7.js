@@ -21,7 +21,7 @@ calculateHourlyWage(75000, 35); // Expected output: "Hourly Wage: $41.21"
 
 // Task 3 Arrow Function
 const calculateLoyalityDiscount = (amount, years)=> {
-    let discountRate; if (years >= 5 {
+    let discountRate; if (years >= 5) {
         discountRate = .15;
     } else if (years >= 3) {
         discountRate = .10;
@@ -38,3 +38,31 @@ calculateLoyalityDiscount(100, 6);
 calculateLoyalityDiscount(200, 2); 
 // Expected output: "Discounted Price: $190"
 
+// Task 4 Parameters and Arguments
+function calculateShippingCost(weight, location, expedited = false) {
+    let baseCost;
+    let perLbCost;
+    if (location === "USA") {
+        baseCost = 5;
+        perLbCost = .5;
+    } else if (location === "Canada") { 
+        baseCost = 10;
+        perLbCost = .7;
+    } else {
+        console.log("Location not supported");
+        return;
+    }
+
+    let shippingCost = baseCost + (perLbCost * weight);
+    if (expedited) {
+        shippingCost += 10;
+    }
+
+    console.log(`Shipping Cost: $${shippingCost.toFixed(2)}`);
+}
+
+// Test Cases
+calculateShippingCost(10, "USA", true);
+// Expected output: "shipping Cost: $20"
+calculateShippingCost(5, "Canada", false);
+// Expected output: "shipping Cost: $13.5"
