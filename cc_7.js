@@ -80,3 +80,18 @@ $${calculateLoanInterest(1000, .05, 3).toFixed(2)}`);
 console.log(`Total Interest: 
 $${calculateLoanInterest(5000, .07, 5).toFixed(2)}`);
 // Expected output: "Total Interest: $1750"
+
+// Task 6 Higher-Order Functions
+// Declare an array with at least five amounts
+let transactions = [500, 1200, 3000, 800, 2200];
+
+// Higher-order function to filter high-value transactions
+const filterHighValueTransactions = (transactions, filterFunction) => {
+    return transactions.filter(filterFunction);
+}
+
+// Test Data
+let highValueTransactions = 
+filterHighValueTransactions(transactions, amount => amount > 1000);
+console.log(highValueTransactions); 
+// Expected output: [1200, 3000, 2200]
