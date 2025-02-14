@@ -66,3 +66,17 @@ calculateShippingCost(10, "USA", true);
 // Expected output: "shipping Cost: $20"
 calculateShippingCost(5, "Canada", false);
 // Expected output: "shipping Cost: $13.5"
+
+// Task 5 Returning Values
+function calculateLoanINterest(principal, rate, years) {
+    let interest = principal * rate * years;
+    return interest;
+}
+
+// Test Cases
+console.log(`Total Interest:
+$${calculateLoanInterest(1000, .05, 3).toFixed(2)}`);
+// Expected output: "Total Interest: $150
+console.log(`Total Interest: 
+$${calculateLoanInterest(5000, .07, 5).toFixed(2)}`);
+// Expected output: "Total Interest: $1750"
